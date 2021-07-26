@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Result
+{% endblock %}
+
+{% block body %}
+
+<div class="card mb-4 shadow-sm text-center">
+    <div class="card-header">
+        <h4 class="my-0 font-weight-normal">Результат</h4>
+    </div>
+    <div class="card-body">
+        <ul class="list-unstyled mt-3 mb-4">
+            <h4>Полная выплата банку: <small>{{credit_calc.total_payment()}} руб.</small></h4>
+            <h4>Сумма кредита: <small>{{credit_calc.loan}} руб.</small></h4>
+            <h4>Переплата: <small>{{credit_calc.overpayment()}} руб.</small></h4>
+        </ul>
+    </div>
+</div>
+<div class="container">
+    <table class="table table-striped ">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">Месяц</th>
+            <th scope="col">Платеж</th>
+            <th scope="col">Процент</th>
+            <th scope="col">Тело кредита</th>
+            <th scope="col">Остаток</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th scope="row">0</th>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>{{credit_calc.loan}}</td>
+        </tr>
+        {% for month in range(credit_calc.period * 12) %}
+        <tr>
+            <th scope="row">{{month + 1}}</th>
+            <td>{{credit_calc.all_payments()[month]}}</td>
+            <td>{{credit_calc.monthly_percent(month)}}</td>
+            <td>{{credit_calc.monthly_credit_body(month)}}</td>
+            <td>{{credit_calc.monthly_remainder(month)}}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

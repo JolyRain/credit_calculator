@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Main page
+{% endblock %}
+
+{% block body %}
+
+<div class="container mt-5">
+    <div class="card-deck mb-3 text-center">
+        <div class="card mb-4 shadow-sm">
+            <div class="card-header">
+                <h4 class="my-0 font-weight-normal">К А Л К Л Я Т О Р</h4>
+            </div>
+            <div class="card-body">
+                <form method="post">
+                    <div class="row">
+                        <div class="col">
+                            <label for="loan">Сумма кредита</label>
+                            <input type="text" name="loan" id="loan" class="form-control" placeholder="руб."><br>
+                        </div>
+                        <div class="col">
+                            <label for="rate">Процентная ставка</label>
+                            <input type="text" name="rate" id="rate" class="form-control" placeholder="% годовых"/><br>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label for="period">Срок</label>
+                            <input type="text" name="period" id="period" class="form-control" placeholder="В годах, пж"><br>
+
+                        </div>
+                        <div class="col">
+                            <label for="credit_type">Порядок погашения</label>
+                            <select class="form-control" id="credit_type" name="credit_type">
+                                <option value="diff" selected>Дифференцированный</option>
+                                <option value="ann">Аннуитентный</option>
+                            </select>
+                        </div>
+                    </div>
+                    <input type="submit" class="btn btn-primary " value="Рассчитать">
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+{% endblock %}

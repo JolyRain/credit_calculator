@@ -1,0 +1,14 @@
+Metadata-Version: 1.1
+Name: mystem
+Version: 0.1.0
+Summary: CFFI bindings to Yandex.Mystem
+Home-page: https://github.com/dveselov/python-mystem
+Author: Dmitry Veselov
+Author-email: d.a.veselov@yandex.ru
+License: MIT / Yandex License
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: Implementation :: CPython
